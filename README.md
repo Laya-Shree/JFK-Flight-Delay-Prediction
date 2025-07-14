@@ -19,7 +19,7 @@ This project aims to predict flight delays at JFK Airport using machine learning
 
 ## Modeling Approaches
 - **Classification:**
-  - XGBoost Classifier to predict delay categories (early, on-time, short delay, long delay)
+  - XGBoost Classifier to predict delay categories (on-time, short delay[<1hr], long delay[>1hr])
   - Target encoding for categorical variables
   - Addressed class imbalance with SMOTE oversampling
 - **Regression:**
@@ -30,29 +30,13 @@ This project aims to predict flight delays at JFK Airport using machine learning
 ## Results
 - **XGBoost Classifier:**
   - Achieved ~70% accuracy on test data for multi-class delay prediction
-  - Best performance for predicting 'on-time' and 'early' classes
+  - Best performance for predicting 'on-time' and 'long delay' classes
 - **Random Forest Regressor:**
   - Mean Absolute Error (MAE): ~12.3 minutes
   - R² Score: ~0.40
 - **XGBoost Regressor:**
-  - R² Score: up to ~0.72 after outlier removal and feature engineering
+  - R² Score: up to ~0.69 after outlier removal and feature engineering
 
-## How to Run
-1. **Install requirements:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. **Run notebooks:**
-   - Open the notebooks in the `notebooks/` directory (e.g., `eda.ipynb`, `XGB_classifier.ipynb`, `RF_code.ipynb`, `XGB_code.ipynb`) using Jupyter Notebook or JupyterLab.
-   - Follow the cells for EDA, preprocessing, model training, and evaluation.
-3. **Models:**
-   - Pretrained model files (`.pkl`) are available in the `notebooks/` directory for XGBoost classifiers.
-
-## Requirements
-See `requirements.txt` for the full list. Key packages:
-- pandas, numpy, matplotlib, seaborn, plotly
-- scikit-learn, xgboost, lightgbm, imbalanced-learn, category_encoders
-- jupyter, ipykernel
 
 ## Project Structure
 - `data.csv` — Main dataset
